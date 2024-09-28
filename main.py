@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import messagebox, simpledialog
+from tkinter import messagebox
 import math
 
 class Calculator:
@@ -23,7 +23,7 @@ class Calculator:
 
         self.root.configure(bg=bg_color)
 
-        self.display = tk.Entry(root, width=35, font=bold_font, borderwidth=15, relief="ridge", bg=display_bg_color, fg=display_fg_color)
+        self.display = tk.Entry(root, width=20, font=bold_font, borderwidth=15, relief="ridge", bg=display_bg_color, fg=display_fg_color)
         self.display.grid(row=0, column=0, columnspan=4, padx=15, pady=15)
 
         buttons = [
@@ -39,7 +39,7 @@ class Calculator:
         col_val = 0
         for button in buttons:
             action = lambda x=button: self.on_button_click(x)
-            tk.Button(root, text=button, width=7, height=3, command=action, bg=button_bg_color, fg=button_fg_color, font=bold_font).grid(row=row_val, column=col_val, padx=5, pady=5)
+            tk.Button(root, text=button, width=5, height=2, command=action, bg=button_bg_color, fg=button_fg_color, font=bold_font).grid(row=row_val, column=col_val, padx=5, pady=5)
             col_val += 1
             if col_val > 3:
                 col_val = 0
